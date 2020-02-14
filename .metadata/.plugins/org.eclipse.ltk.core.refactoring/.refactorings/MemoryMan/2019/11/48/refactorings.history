@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;mike.css&apos; to &apos;MemoryMan/src/controller&apos;&#x0D;&#x0A;- Original project: &apos;MemoryMan&apos;&#x0D;&#x0A;- Destination element: &apos;MemoryMan/src/controller&apos;&#x0D;&#x0A;- Original element: &apos;mike.css&apos;" description="Copy file" destination="/src&lt;controller" element1="src/view/mike.css" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1574570513321" units="0" version="1.0"/>
+</session>

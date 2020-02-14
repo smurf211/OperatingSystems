@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.Controller">
+  <children>
+    <MenuBar prefHeight="26.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#helpInfo" text="Help" />
+            <MenuItem mnemonicParsing="false" onAction="#algoInfo" text="Algorithms" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <Text scaleX="1.2276632253430397" scaleY="1.34101834998246" strokeType="OUTSIDE" strokeWidth="0.0" text="Memory Manager" textOrigin="CENTER" AnchorPane.leftAnchor="307.85" AnchorPane.rightAnchor="320.84" AnchorPane.topAnchor="38.0">
+      <font>
+        <Font name="Bauhaus 93" size="22.0" />
+      </font>
+    </Text>
+    <Line endX="315.0" endY="0.0" layoutX="380.0" layoutY="70.0" startX="-274.0" startY="0.0" />
+    <Button fx:id="addBtn" layoutX="31.0" layoutY="424.0" mnemonicParsing="false" onAction="#addProcessFF" prefHeight="36.0" prefWidth="235.0" text="Add to Memory" />
+    <Button fx:id="removeBtn" layoutX="31.0" layoutY="473.0" mnemonicParsing="false" onAction="#removeProcessFF" prefHeight="36.0" prefWidth="235.0" text="Remove from Memory" />
+    <Button fx:id="compactBtn" layoutX="31.0" layoutY="598.0" mnemonicParsing="false" onAction="#compactMemory" prefHeight="36.0" prefWidth="235.0" text="Compact Memory" />
+    <ComboBox fx:id="algoBox" layoutX="187.0" layoutY="105.0" onAction="#selectAlgo" prefHeight="36.0" prefWidth="155.90423583984375" promptText="Select an Algorithm">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <TextField fx:id="totalMemField" layoutX="187.0" layoutY="167.0" prefHeight="35.38658142089844" prefWidth="126.0" style="-fx-font-size: 14pt;  &#10;  -fx-font-family: &quot;Segoe UI Semibold&quot;; &#10;   -fx-text-fill: black; &#10;   -fx-opacity: 1;" text="4096" />
+    <TextField fx:id="OSfield" layoutX="187.0" layoutY="221.0" prefHeight="35.38658142089844" prefWidth="126.0" style="-fx-font-size: 14pt;  &#10;  -fx-font-family: &quot;Segoe UI Semibold&quot;; &#10;   -fx-text-fill: black; &#10;   -fx-opacity: 1;" text="512" />
+    <TextField fx:id="processSizeField" layoutX="187.0" layoutY="346.0" prefHeight="35.38658142089844" prefWidth="126.0" style="-fx-font-size: 14pt;  &#10;  -fx-font-family: &quot;Segoe UI Semibold&quot;; &#10;   -fx-text-fill: black; &#10;   -fx-opacity: 1;" text="400" />
+    <Text layoutX="333.0" layoutY="186.0" scaleX="9.236639197833222" scaleY="8.075178644029629" strokeType="OUTSIDE" strokeWidth="0.0" text="K">
+      <font>
+        <Font name="Bauhaus 93" size="3.0" fx:id="x1" />
+      </font>
+    </Text>
+    <Text font="$x1" layoutX="333.0" layoutY="240.0" scaleX="9.236639197833222" scaleY="8.075178644029629" strokeType="OUTSIDE" strokeWidth="0.0" text="K" />
+    <Text font="$x1" layoutX="333.0" layoutY="365.0" scaleX="9.236639197833222" scaleY="8.075178644029629" strokeType="OUTSIDE" strokeWidth="0.0" text="K" />
+    <Line endX="-103.0" endY="679.0" layoutX="501.0" layoutY="112.0" startX="-100.0" startY="-25.0" />
+    <VBox fx:id="ramVbox" layoutX="528.0" layoutY="76.0" prefHeight="700.0" prefWidth="158.291015625" style="-fx-border-color: black;&#10;   -fx-border-width: 3;&#10;-fx-background-color: DeepSkyBlue ;&#10; ">
+      <stylesheets>
+        <URL value="@mike.css" />
+      </stylesheets>
+    </VBox>
+    <Text layoutX="426.0" layoutY="318.0" scaleX="5.460999518880252" scaleY="2.609901206174742" strokeType="OUTSIDE" strokeWidth="0.0" text="R&#10;A&#10;M" textAlignment="CENTER" />
+    <ComboBox id="algoBox" fx:id="processBox" layoutX="187.0" layoutY="284.0" prefHeight="36.0" prefWidth="156.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Text layoutX="507.0" layoutY="88.0" scaleX="9.236639197833222" scaleY="7.76467930621797" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+      <font>
+        <Font size="3.0" fx:id="x3" />
+      </font>
+    </Text>
+    <Text fx:id="totalMemText" font="$x3" layoutY="775.0" scaleX="9.236639197833222" scaleY="7.76467930621797" strokeType="OUTSIDE" strokeWidth="0.0" text="0" AnchorPane.leftAnchor="485.0" />
+    <Button layoutX="86.0" layoutY="670.0" mnemonicParsing="false" onAction="#clearRam" prefHeight="36.0" prefWidth="126.0" text="Clear RAM" />
+    <Text layoutX="37.0" layoutY="135.0" scaleX="1.0769949916527546" scaleY="1.2217327459618208" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Algorithm">
+      <font>
+        <Font size="16.0" fx:id="x2" />
+      </font>
+    </Text>
+    <Text font="$x2" layoutX="37.0" layoutY="197.0" scaleX="1.0769949916527546" scaleY="1.2217327459618208" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Memory" />
+    <Text font="$x2" layoutX="36.0" layoutY="251.0" scaleX="1.0769949916527546" scaleY="1.2217327459618208" strokeType="OUTSIDE" strokeWidth="0.0" text="OS Memory" />
+    <Text font="$x2" layoutX="36.0" layoutY="314.0" scaleX="1.0769949916527546" scaleY="1.2217327459618208" strokeType="OUTSIDE" strokeWidth="0.0" text="Process ID" />
+    <Text font="$x2" layoutX="35.0" layoutY="376.0" scaleX="1.0769949916527546" scaleY="1.2217327459618208" strokeType="OUTSIDE" strokeWidth="0.0" text="Process Size" />
+  </children>
+  <stylesheets>
+    <URL value="@mike.css" />
+  </stylesheets>
+</AnchorPane>

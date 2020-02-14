@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="598.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.Controller">
+  <children>
+    <MenuBar AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" fx:id="exitItem" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Need Help?">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#helpInfo" text="ReadME!" fx:id="infoItem" />
+          </items>
+        </Menu>
+      </menus>
+      <stylesheets>
+        <URL value="@mike.css" />
+      </stylesheets>
+    </MenuBar>
+    <ComboBox id="comboBox" fx:id="processSelector" editable="false" layoutX="147.0" layoutY="39.0" onAction="#selectProcesses">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Button fx:id="randomBurstButton" layoutX="222.0" layoutY="39.0" mnemonicParsing="false" onAction="#randomBurstTimes" text="Use Random Burst Times" />
+    <Button fx:id="calculateButton" layoutX="399.0" layoutY="39.0" mnemonicParsing="false" onAction="#runCPUFCFS" text="Calculate" />
+    <ComboBox fx:id="schedulerSelector" layoutX="202.0" layoutY="72.0" onAction="#selectScheduler" prefHeight="21.0" prefWidth="152.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <TextField editable="false" layoutX="14.0" layoutY="39.0" prefWidth="129.0" text="Select # of Processes" />
+    <TextField editable="false" layoutX="14.0" layoutY="71.0" prefWidth="171.0" text="Select Scheduling Algorithm" />
+    <TextField editable="false" focusTraversable="false" layoutX="14.0" layoutY="105.0" prefWidth="70.0" text="Process" />
+    <TextField editable="false" focusTraversable="false" layoutX="103.0" layoutY="105.0" prefWidth="70.0" text="Burst (ms)" />
+    <TextField editable="false" focusTraversable="false" layoutX="286.0" layoutY="105.0" maxWidth="70.0" prefWidth="127.0" text="Wait Time" />
+    <TextField editable="false" focusTraversable="false" layoutX="368.0" layoutY="105.0" maxWidth="70.0" prefWidth="114.0" text="T/A Time" />
+    <VBox id="VBox" alignment="CENTER" layoutX="14.0" layoutY="138.0" spacing="5.0">
+      <children>
+        <TextField fx:id="processBox1" editable="false" prefWidth="70.0" text="P1" />
+        <TextField fx:id="processBox2" editable="false" prefWidth="70.0" text="P2" />
+        <TextField fx:id="processBox3" editable="false" prefWidth="70.0" text="P3" />
+        <TextField fx:id="processBox4" editable="false" prefWidth="70.0" text="P4" />
+        <TextField fx:id="processBox5" editable="false" prefWidth="70.0" text="P5" />
+        <TextField fx:id="processBox6" editable="false" prefWidth="70.0" text="P6" />
+        <TextField fx:id="processBox7" editable="false" prefWidth="70.0" text="P7" />
+        <TextField fx:id="processBox8" editable="false" prefWidth="70.0" text="P8" />
+        <TextField fx:id="processBox9" editable="false" prefWidth="70.0" text="P9" />
+        <TextField fx:id="processBox10" editable="false" prefWidth="70.0" text="P10" />
+      </children>
+    </VBox>
+    <VBox id="VBox" alignment="CENTER" layoutX="103.0" layoutY="138.0" spacing="5.0">
+      <children>
+        <TextField fx:id="burstBox1" prefWidth="70.0" />
+        <TextField fx:id="burstBox2" prefWidth="70.0" />
+        <TextField fx:id="burstBox3" prefWidth="70.0" />
+        <TextField fx:id="burstBox4" prefWidth="70.0" />
+        <TextField fx:id="burstBox5" prefWidth="70.0" />
+        <TextField fx:id="burstBox6" prefWidth="70.0" />
+        <TextField fx:id="burstBox7" prefWidth="70.0" />
+        <TextField fx:id="burstBox8" prefWidth="70.0" />
+        <TextField fx:id="burstBox9" prefWidth="70.0" />
+        <TextField fx:id="burstBox10" prefWidth="70.0" />
+      </children>
+    </VBox>
+    <VBox id="VBox" alignment="CENTER" layoutX="286.0" layoutY="138.0" spacing="5.0">
+      <children>
+        <TextField fx:id="waitBox1" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField fx:id="waitBox2" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField fx:id="waitBox3" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField fx:id="waitBox4" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField fx:id="waitBox5" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField fx:id="waitBox6" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField fx:id="waitBox7" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField fx:id="waitBox8" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField fx:id="waitBox9" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField fx:id="waitBox10" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField id="waitBox10" fx:id="averageWaitBox" editable="false" focusTraversable="false" maxWidth="70.0" prefWidth="127.0" />
+      </children>
+    </VBox>
+    <VBox id="VBox" alignment="CENTER" layoutX="369.0" layoutY="138.0" spacing="5.0">
+      <children>
+        <TextField fx:id="TABox1" editable="false" maxWidth="70.0" prefWidth="114.0" />
+        <TextField fx:id="TABox2" editable="false" maxWidth="70.0" prefWidth="114.0" />
+        <TextField fx:id="TABox3" editable="false" maxWidth="70.0" prefWidth="114.0" />
+        <TextField fx:id="TABox4" editable="false" maxWidth="70.0" prefWidth="114.0" />
+        <TextField fx:id="TABox5" editable="false" maxWidth="70.0" prefWidth="114.0" />
+        <TextField fx:id="TABox6" editable="false" maxWidth="70.0" prefWidth="114.0" />
+        <TextField fx:id="TABox7" editable="false" maxWidth="70.0" prefWidth="114.0" />
+        <TextField fx:id="TABox8" editable="false" maxWidth="70.0" prefWidth="114.0" />
+        <TextField fx:id="TABox9" editable="false" maxWidth="70.0" prefWidth="114.0" />
+        <TextField fx:id="TABox10" editable="false" maxWidth="70.0" prefWidth="114.0" />
+        <TextField id="TABox10" fx:id="averageTABox" editable="false" focusTraversable="false" maxWidth="70.0" prefWidth="114.0" />
+      </children>
+    </VBox>
+    <TextField editable="false" focusTraversable="false" layoutX="196.0" layoutY="105.0" maxWidth="80.0" prefWidth="100.0" text="Arrival Time" />
+    <VBox id="VBox" alignment="CENTER" layoutX="196.0" layoutY="138.0" spacing="5.0">
+      <children>
+        <TextField id="waitBox1" fx:id="arrivalBox1" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField id="waitBox2" fx:id="arrivalBox2" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField id="waitBox3" fx:id="arrivalBox3" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField id="waitBox4" fx:id="arrivalBox4" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField id="waitBox5" fx:id="arrivalBox5" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField id="waitBox6" fx:id="arrivalBox6" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField id="waitBox7" fx:id="arrivalBox7" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField id="waitBox8" fx:id="arrivalBox8" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField id="waitBox9" fx:id="arrivalBox9" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField id="waitBox10" fx:id="arrivalBox10" editable="false" maxWidth="70.0" prefWidth="127.0" />
+        <TextField id="waitBox10" editable="false" focusTraversable="false" maxWidth="70.0" prefWidth="127.0" text="Average" />
+      </children>
+    </VBox>
+    <TextField editable="false" focusTraversable="false" layoutX="449.0" layoutY="105.0" maxWidth="70.0" prefWidth="114.0" text="Priority" />
+    <VBox id="VBox" alignment="CENTER" layoutX="449.0" layoutY="138.0" spacing="5.0">
+      <children>
+        <TextField id="TABox1" fx:id="priorityBox1" editable="true" maxWidth="70.0" prefWidth="114.0" />
+        <TextField id="TABox2" fx:id="priorityBox2" editable="true" maxWidth="70.0" prefWidth="114.0" />
+        <TextField id="TABox3" fx:id="priorityBox3" editable="true" maxWidth="70.0" prefWidth="114.0" />
+        <TextField id="TABox4" fx:id="priorityBox4" editable="true" maxWidth="70.0" prefWidth="114.0" />
+        <TextField id="TABox5" fx:id="priorityBox5" editable="true" maxWidth="70.0" prefWidth="114.0" />
+        <TextField id="TABox6" fx:id="priorityBox6" editable="true" maxWidth="70.0" prefWidth="114.0" />
+        <TextField id="TABox7" fx:id="priorityBox7" editable="true" maxWidth="70.0" prefWidth="114.0" />
+        <TextField id="TABox8" fx:id="priorityBox8" editable="true" maxWidth="70.0" prefWidth="114.0" />
+        <TextField id="TABox9" fx:id="priorityBox9" editable="true" maxWidth="70.0" prefWidth="114.0" />
+        <TextField id="TABox10" fx:id="priorityBox10" editable="true" maxWidth="70.0" prefWidth="114.0" />
+      </children>
+    </VBox>
+    <TextField fx:id="quantumBox" layoutX="369.0" layoutY="72.0" maxWidth="70.0" prefWidth="114.0" text="Quantum" />
+    <ComboBox fx:id="quantumCombo" layoutX="447.0" layoutY="71.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <AnchorPane id="Content" layoutX="13.0" layoutY="473.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+      <children>
+        <Rectangle fx:id="rect2" arcHeight="5.0" arcWidth="5.0" height="44.0" layoutX="63.0" layoutY="4.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="53.0">
+          <fill>
+            <Color blue="1.000" green="0.000" red="0.078" fx:id="x1" />
+          </fill>
+        </Rectangle>
+        <Rectangle fx:id="rect3" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="44.0" layoutX="116.0" layoutY="4.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="53.0" />
+        <Rectangle id="rect3" fx:id="rect4" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="44.0" layoutX="169.0" layoutY="4.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="53.0" />
+        <Rectangle id="rect4" fx:id="rect5" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="44.0" layoutX="222.0" layoutY="4.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="53.0" />
+        <Rectangle id="rect5" fx:id="rect6" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="44.0" layoutX="275.0" layoutY="4.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="53.0" />
+        <Rectangle id="rect6" fx:id="rect7" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="44.0" layoutX="328.0" layoutY="4.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="53.0" />
+        <Rectangle id="rect7" fx:id="rect8" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="44.0" layoutX="381.0" layoutY="4.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="53.0" />
+        <Rectangle id="rect8" fx:id="rect9" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="44.0" layoutX="434.0" layoutY="4.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="53.0" />
+        <Rectangle id="rect9" fx:id="rect10" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="44.0" layoutX="487.0" layoutY="4.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="53.0" />
+        <Rectangle id="rect2" fx:id="rect1" arcHeight="5.0" arcWidth="5.0" fill="$x1" height="44.0" layoutX="10.0" layoutY="4.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="53.0" />
+        <TextField fx:id="colorBox1" alignment="CENTER" editable="false" layoutX="19.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" style="" text="P1">
+          <stylesheets>
+            <URL value="@application.css" />
+          </stylesheets>
+        </TextField>
+        <TextField id="rect1F1" fx:id="gantt1" alignment="CENTER_LEFT" editable="false" layoutX="0.0" layoutY="48.0" minWidth="35.0" prefHeight="19.0" prefWidth="22.0" />
+        <TextField id="rect1F2" fx:id="gantt2" alignment="CENTER_LEFT" editable="false" layoutX="47.0" layoutY="48.0" minWidth="35.0" prefHeight="19.0" prefWidth="22.0" />
+        <TextField id="rect2F2" fx:id="gantt3" alignment="CENTER_LEFT" editable="false" layoutX="100.0" layoutY="48.0" minWidth="35.0" prefHeight="19.0" prefWidth="22.0" />
+        <TextField id="rect2F2" fx:id="gantt4" alignment="CENTER_LEFT" editable="false" layoutX="153.0" layoutY="48.0" minWidth="35.0" prefHeight="19.0" prefWidth="22.0" />
+        <TextField fx:id="gantt5" alignment="CENTER_LEFT" editable="false" layoutX="206.0" layoutY="48.0" minWidth="35.0" prefHeight="19.0" prefWidth="22.0" />
+        <TextField fx:id="gantt6" alignment="CENTER_LEFT" editable="false" layoutX="259.0" layoutY="48.0" minWidth="35.0" prefHeight="19.0" prefWidth="22.0" />
+        <TextField fx:id="gantt7" alignment="CENTER_LEFT" editable="false" layoutX="312.0" layoutY="48.0" minWidth="35.0" prefHeight="19.0" prefWidth="22.0" />
+        <TextField fx:id="gantt8" alignment="CENTER_LEFT" editable="false" layoutX="365.0" layoutY="48.0" minWidth="35.0" prefHeight="19.0" prefWidth="22.0" />
+        <TextField fx:id="gantt9" alignment="CENTER_LEFT" editable="false" layoutX="418.0" layoutY="48.0" minWidth="35.0" prefHeight="19.0" prefWidth="22.0" />
+        <TextField fx:id="gantt10" alignment="CENTER_LEFT" editable="false" layoutX="471.0" layoutY="48.0" minWidth="35.0" prefHeight="19.0" prefWidth="22.0" />
+        <TextField fx:id="gantt11" alignment="CENTER_LEFT" editable="false" layoutX="524.0" layoutY="48.0" minWidth="35.0" prefHeight="19.0" prefWidth="22.0" />
+        <TextField id="colorBox1" fx:id="colorBox2" alignment="CENTER" editable="false" layoutX="75.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" style="" text="P2">
+          <stylesheets>
+            <URL value="@application.css" />
+          </stylesheets>
+        </TextField>
+        <TextField id="colorBox1" fx:id="colorBox3" alignment="CENTER" editable="false" layoutX="128.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" style="" text="P3">
+          <stylesheets>
+            <URL value="@application.css" />
+          </stylesheets>
+        </TextField>
+        <TextField id="colorBox1" fx:id="colorBox4" alignment="CENTER" editable="false" layoutX="181.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" style="" text="P4">
+          <stylesheets>
+            <URL value="@application.css" />
+          </stylesheets>
+        </TextField>
+        <TextField id="colorBox1" fx:id="colorBox5" alignment="CENTER" editable="false" layoutX="234.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" style="" text="P5">
+          <stylesheets>
+            <URL value="@application.css" />
+          </stylesheets>
+        </TextField>
+        <TextField id="colorBox1" fx:id="colorBox6" alignment="CENTER" editable="false" layoutX="287.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" style="" text="P6">
+          <stylesheets>
+            <URL value="@application.css" />
+          </stylesheets>
+        </TextField>
+        <TextField id="colorBox1" fx:id="colorBox7" alignment="CENTER" editable="false" layoutX="340.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" style="" text="P7">
+          <stylesheets>
+            <URL value="@application.css" />
+          </stylesheets>
+        </TextField>
+        <TextField id="colorBox1" fx:id="colorBox8" alignment="CENTER" editable="false" layoutX="393.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" style="" text="P8">
+          <stylesheets>
+            <URL value="@application.css" />
+          </stylesheets>
+        </TextField>
+        <TextField id="colorBox1" fx:id="colorBox9" alignment="CENTER" editable="false" layoutX="443.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" style="" text="P9">
+          <stylesheets>
+            <URL value="@application.css" />
+          </stylesheets>
+        </TextField>
+        <TextField id="colorBox1" fx:id="colorBox10" alignment="CENTER" editable="false" layoutX="496.0" layoutY="14.0" prefHeight="25.0" prefWidth="35.0" style="" text="P10">
+          <stylesheets>
+            <URL value="@application.css" />
+          </stylesheets>
+        </TextField>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@application.css" />
+    <URL value="@mike.css" />
+  </stylesheets>
+</AnchorPane>

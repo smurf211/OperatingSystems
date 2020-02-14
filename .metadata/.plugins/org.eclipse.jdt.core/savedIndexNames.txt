@@ -1,0 +1,21 @@
+INDEX VERSION 1.130+C:\Users\Ryzen\OperatingSystems\.metadata\.plugins\org.eclipse.jdt.core
+2513296765.index
+3237419785.index
+3666954567.index
+3689280791.index
+2382102078.index
+1218536452.index
+2155078723.index
+3745284102.index
+2231472213.index
+2485708094.index
+3083931964.index
+3741206325.index
+1119877776.index
+1869150790.index
+769205589.index
+231259379.index
+57846308.index
+3996102163.index
+1467401998.index
+1473373168.index
